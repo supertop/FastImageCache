@@ -1,7 +1,7 @@
 Pod::Spec.new do |s|
   s.name         = "FastImageCache"
   s.version      = "1.5.1"
-  s.summary      = "iOS library for quickly displaying images while scrolling",
+  s.summary      = "iOS library for quickly displaying images while scrolling"
   s.description  = <<-DESC
     Fast Image Cache is an efficient, persistent, and—above all—fast way to store and retrieve images in your iOS application. 
     Part of any good iOS application's user experience is fast, smooth scrolling, and Fast Image Cache helps make this easier.
