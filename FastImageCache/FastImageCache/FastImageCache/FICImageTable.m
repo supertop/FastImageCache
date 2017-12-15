@@ -141,12 +141,10 @@ static BOOL FICProtectedDataAvailable = NO;
 }
 
 + (void)registerForProtectedDataNotifications {
-    dispatch_async(dispatch_get_main_queue(), ^{
-        UIApplication *application = [UIApplication performSelector:@selector(sharedApplication)];
-        if (application) {
-            FICProtectedDataAvailable = [application isProtectedDataAvailable];
-        }
-    });
+    UIApplication *application = [UIApplication performSelector:@selector(sharedApplication)];
+    if (application) {
+        FICProtectedDataAvailable = [application isProtectedDataAvailable];
+    }
     [NSNotificationCenter.defaultCenter addObserver:self selector:@selector(protectedDataWillBecomeUnavailable:) name:UIApplicationProtectedDataWillBecomeUnavailable object:nil];
     [NSNotificationCenter.defaultCenter addObserver:self selector:@selector(protectedDataDidBecomeAvailable:) name:UIApplicationProtectedDataDidBecomeAvailable object:nil];
 }
